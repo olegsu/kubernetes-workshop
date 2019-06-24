@@ -9,6 +9,7 @@ docker run --link db -p 80:3000 -d chat
 
 # 02-composition
 ```bash
+docker rm -f $(docker ps -aq)
 cd /workshop/microservices-demo
 git checkout docker-compose
 docker-compose -f composition-manifests docker-compose.yml up
