@@ -37,18 +37,21 @@ kubectl get service -o wide
 kubectl describe service <NAME>
 ```
 # 06-kubernetes(scale)
-## Current terminal
-```bash
-kubectl scale deployment currencyservice --replicas 2
-kubectl delete pods <NAME>
-kubectl scale deployment currencyservice --replicas 1
-```
+
 ## New terminal
 ```bash
 sudo su -
 export KUBECONFIG=/workshop/kube.json
 watch kubectl get pods 
 ```
+
+## Current terminal
+```bash
+kubectl scale deployment currencyservice --replicas 2
+kubectl delete pods <NAME>
+kubectl scale deployment currencyservice --replicas 1
+```
+
 # 07-kubernetes(upgrade)
 ```bash
 git checkout regression
