@@ -62,7 +62,7 @@ kubectl get deployment
 
 # 08-kubernetes(rollback)
 ```bash
-kubectl rollout history deployment/currencyservice
-kubectl rollout undo deployment/currencyservice
-kubectl rollout history deployment/currencyservice
+kubectl rollout history deployment/shippingservice
+kubectl rollout undo deployment/shippingservice
+kubectl rollout history deployment/shippingservice
 ```
