@@ -12,7 +12,7 @@ docker run --link db -p 80:3000 -d chat
 docker rm -f $(docker ps -aq)
 cd /workshop/microservices-demo
 git checkout docker-compose
-docker-compose -f composition-manifests/docker-compose.yml up
+docker-compose -f composition-manifests/docker-compose.yml -d up
 ```
 
 # 03-kubernetes
