@@ -18,7 +18,6 @@ docker-compose -f composition-manifests/docker-compose.yml -d up
 # 03-kubernetes
 ```bash
 cd /workshop/microservices-demo
-export KUBECONFIG=/workshop/kube.json
 git checkout kubernetes
 kubectl config current-context
 kubectl apply -f release/kubernetes-manifests.yaml
@@ -41,7 +40,6 @@ kubectl describe service <NAME>
 ## New terminal
 ```bash
 sudo su -
-export KUBECONFIG=/workshop/kube.json
 watch kubectl get pods 
 ```
 
