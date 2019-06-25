@@ -1,0 +1,36 @@
+apiVersion: apps/v1beta2
+kind: DaemonSet
+metadata:
+  name: puller
+  annotations:
+    source: "https://gist.github.com/itaysk/7bc3e56d69c4d72a549286d98fd557dd"
+spec:
+  selector:
+    matchLabels:
+      name: puller 
+  template:
+    metadata:
+      labels:
+        name: puller 
+    spec:
+      initContainers:
+      - name: puller 
+        image: docker
+        command:
+        - sh
+        - /puller/pull-all.sh
+        volumeMounts:
+        - name: docker
+          mountPath: /var/run
+        - name: puller
+          mountPath: /puller
+      volumes:
+      - name: docker
+        hostPath:
+          path: /var/run
+      - name: puller
+        configMap:
+          name: pull
+      containers:
+      - name: pause
+        image: gcr.io/google_containers/pause
