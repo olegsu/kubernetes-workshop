@@ -17,7 +17,6 @@ docker-compose -f composition-manifests/docker-compose.yml up -d
 
 # 03-kubernetes
 ```bash
-cd /workshop/microservices-demo
 git checkout kubernetes
 kubectl config current-context
 kubectl apply -f release/kubernetes-manifests.yaml
